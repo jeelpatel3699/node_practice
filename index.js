@@ -16,6 +16,9 @@
 // ---------static loads static file---------
 // app.use(express.static(publicpath));
 
+
+
+
 // --------Remove extention from url-------
 
 app.get('/home',(req,resp)=>{
@@ -24,7 +27,6 @@ app.get('/home',(req,resp)=>{
 })
 app.get('*',(req,resp)=>{
 resp.sendFile(`${publicpath}/nofile.html`)
-
 })
 
 
