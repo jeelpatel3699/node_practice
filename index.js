@@ -17,6 +17,10 @@
 // app.use(express.static(publicpath));
 
 
+// --------ejs template engine------------------
+
+app.set('view engine','ejs');
+
 
 
 // --------Remove extention from url-------
@@ -25,6 +29,17 @@ app.get('/home',(req,resp)=>{
     resp.sendFile(`${publicpath}/home.html`)
 
 })
+
+app.get('/profile',(_,resp)=>{
+    const user = {
+        name:"jeel patel",
+        email:"jeel@gmail.com",
+        city:"valsad"
+    }
+
+    resp.render('profile',{user});
+})
+
 app.get('*',(req,resp)=>{
 resp.sendFile(`${publicpath}/nofile.html`)
 })
