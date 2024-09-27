@@ -34,7 +34,8 @@ app.get('/profile',(_,resp)=>{
     const user = {
         name:"jeel patel",
         email:"jeel@gmail.com",
-        city:"valsad"
+        city:"valsad",
+        skill:['html','css','js']
     }
 
     resp.render('profile',{user});

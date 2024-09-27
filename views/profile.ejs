@@ -6,7 +6,14 @@
     <title>profile page</title>
 </head>
 <body>
+    <%- include('common/header');%>
     <h1>welcome <%= user.name%></h1>
     <h1>email:<%= user.email%></h1>  
+
+    <ul>
+        <% user.skill.forEach((item)=>{ %>
+            <li><%= item%></li>
+       <% }) %>
+    </ul>
 </body>
 </html>
